@@ -42,6 +42,8 @@ git_source(:github) do |repo_name|
  
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'bootsnap'
  
   gem 'guard'
   gem 'guard-bundler', require: false
