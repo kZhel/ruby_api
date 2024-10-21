@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   scope module: "api" do
     namespace :v1 do
-      resources :jobs
+      resources :jobs do
+        resources :applies
+      end
       resources :geeks do
-        get "job/:job_id", to: "geeks#applies_for_geek", on: :collection
-        get "company/:company_id", to: "geeks#geeks_for_company", on: :collection
+        resources :applies
       end
       resources :applies do
         get "company/:company_id", to: "applies#applies_for_company", on: :collection
